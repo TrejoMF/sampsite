@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LISTA</title>
+</head>
+<body>
+    <h3>Lista</h3>
+    
+    <ul>
+    {% for object in object_list %}
+        <li><a href="{{ object.get_absolute_url }}">{{ object.nombre }}</a></li>
+    {% empty %}
+        <li>NADA AL CHILE</li>
+    {% endfor %}
+    </ul>
+        
+
+</body>
+</html>
