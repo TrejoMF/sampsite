@@ -8,10 +8,9 @@ class Detail(DetailView):
     model = registro
     template_name = "detail.html"
 
-    def get(self, request, *args, **kwargs):
-        producto = get_object_or_404(self.model, pk=1)
+    def get(self, request, pk, **kwargs):
+        producto = get_object_or_404(self.model, pk=pk)
         context = {
-            "titulo": "SOBRE EL PRODUCTO",
             "objeto": producto
         }
         return render(request, self.template_name, context)
